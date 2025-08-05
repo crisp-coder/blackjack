@@ -1,6 +1,6 @@
 # Blackjack
 This is a blackjack game written in c++ for the linux terminal.
-It is currently playable from the command line only.
+It is currently playable from the terminal only.
 It was made as a personal project for boot.dev
 
 # Disclaimer
@@ -21,7 +21,7 @@ I may add a build script for windows msvc and or gcc at a later date.
 Feel free to contact me if you would like to implement this and add it to the repo.
 
 ## Cloning
-To clone this project, run git clone https://www.github.com/crisp-coder/blackjack.git from your command line.
+To clone this project, run git clone https://www.github.com/crisp-coder/blackjack.git from your terminal.
 
 ## Setup
 1. Run "source ./env.sh" from the blackjack directory, this is the root of the project.
