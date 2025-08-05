@@ -3,7 +3,7 @@ This is a blackjack game written in c++ for the linux terminal.
 It is currently playable from the terminal only.
 It was made as a personal project for boot.dev
 
-# Disclaimer
+## Disclaimer
 This game is not intended as a professional release or for use with real money.
 This game is for entertainment and learning purposes only.
 
@@ -11,7 +11,7 @@ This game is for entertainment and learning purposes only.
 The goals of this project are to practice c++ coding and project design.
 It is a future goal to create a simple gui using a library or the terminal.
 
-# Dependencies
+## Dependencies
 This game was written in c++11. 
 You need a c++11 compliant compiler installed such as g++.
 If you use something other than g++, you must change the build scripts to
