@@ -21,7 +21,7 @@ I may add a build script for windows msvc and or gcc at a later date.
 Feel free to contact me if you would like to implement this and add it to the repo.
 
 ## Cloning
-To clone this project, run git clone https://www.github.com/crisp-coder/blackjack.git from your terminal.
+To clone this project, run git clone https://github.com/crisp-coder/blackjack.git from your terminal.
 
 ## Setup
 1. Run "source ./env.sh" from the blackjack directory, this is the root of the project.
