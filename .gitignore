@@ -1,0 +1,8 @@
+# Temp Files
+todo.*
+bugs.*
+
+# Generated dirs
+logs/
+target/
+

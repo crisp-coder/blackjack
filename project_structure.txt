@@ -1,0 +1,24 @@
+Project Structure:
+  Target:
+    The target directory is where compiled executables are stored after running
+    a build script.
+
+  Includes: 
+    Included files are added to the build script inclusion paths.
+
+  Scripts:
+    The scripts directory holds bash scripts needed
+    to execute compile, run, clean, test, etc.
+
+  Logs:
+    The logs directory is where log files are stored.
+
+  Design:
+    The design directory holds documentation files for the project. 
+    Things like implementation notes, design artifacts, instructions, etc.
+
+  Src:
+    The src directory is where all project source code should go.
+    The src directory also has unit tests.
+    Unit tests are run by the testing scripts.
+

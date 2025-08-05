@@ -1,0 +1,29 @@
+Command Line Actions:
+  Main Menu Actions:
+    Play
+    Cash In
+    Cash Out // No reason to do this... player will eventually hit 0.
+    Change Wager
+    Check Player Balance
+    Quit
+ 
+  Display Actions:
+    Display Table
+    Display Balance
+
+Player Controller Actions:
+    Hit
+    Stand
+    Double Down
+    Split
+    Surrender
+    Accept Insurance
+  
+Game Events to Interfaces
+  Pay Winnings: Updates CLI and adds winnings to player balance.
+  Request Wager: Accepts player's current bet amount as the wager.
+  Offer Insurance: Requests player decision to place inusurance bet.
+  Request Player Action: Requests player decision for current hand.
+
+  Send Table State: Updates CLI with current table state.
+  Send Hand Win Result: Updates CLI with result of player hand.

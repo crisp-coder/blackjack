@@ -1,0 +1,82 @@
+Deck and Cards
+REQ: Cards must have rank and suit.
+     There are 4 suits (Hearts, Clubs, Spades, Diamnods) and 
+     There are 13 ranks (Ace, 2 through 10, Jack, Queen and King).
+REQ: A single deck must be 52 cards. 
+     Each of the possible Suit and rank combinations must appear in the deck exactly once.
+REQ: Each face card has a value of 10.
+REQ: An Ace has a value of 1 or 11. 
+     The value of the Ace is 11 if the total of the hand before
+     adding the Ace plus 11 would be less than 21.
+     The value is 1 if the total of the hand before adding the Ace
+     plus 11 would be more than 21.
+
+Players and Dealer
+REQ: Player must be able to hold a hand of cards.
+REQ: Dealer must be able to hold a hand of cards.
+REQ: Dealer must be able to hide one card face down.
+REQ: Dealer stands on 17 or higher.
+REQ: Only dealer can deal cards.
+REQ: Player must have a credit balance.
+REQ: Player balance must be more than the minimum bet to play.
+REQ: Minimum bet is 25.
+REQ: Players must place all bets on table before start of round.
+
+Game Rules
+REQ: The game is played in rounds. At begginning of round a card is dealt to each player face up, 
+     then the dealer is given a card face down that only the dealer can see (hole card), 
+     then another card is dealt to each player and to the dealer face up.
+
+Insurance
+REQ: Dealer must offer insurance if on initial drawing, the dealer's face up card is an Ace. If 
+     the face down card has a value of 10, then the player wins the insurance bet.
+REQ: The payout on an insurance bet is 2 to 1.
+REQ: The maximum value a player may bet when insurance is offered is half of their original bet.
+     Because insurance pays 2 to 1, winning the insurance covers the cost of the original bet 
+     so the net win is 0.
+
+Natural
+REQ: Player wins a natural if hand value is 21 on first two cards dealt to player 
+     at the beginning of around.
+REQ: The payout on a natural is 3 to 2 on the player bet.
+REQ: If both the player and the dealer have a natural then the round is a push and
+     the wager is returned to the player.
+
+Player Actions
+REQ: Player can Hit, which means they draw an additional card and the new hand value is calculated.
+REQ: Player busts if at any point the value of the player hand is over 21.
+REQ: Player can Double, which means their bet is doubled, a new card drawn, 
+     and the player must immediately stay.
+REQ: Player can Stay, which means the player stops receiving cards for the rest of the round
+     and the game moves to the next player. A player who has stayed can wins if 1)the dealer
+     busts or 2)the dealer stays and the players hand is higher than the dealers.
+     
+REQ: Player can Split. The player can only split if their hand has two cards of the same value.
+     Note that the ten, jack, queen, and king all have same value.
+     The player's hand is split into two hands, a second wager equal to the first is applied to 
+     the new hand, and a new card is dealt to both hands.
+     Then the game continues as normal for each hand.     
+
+REQ: Split Exception. If the split hand was a pair of aces, then only one card is drawn per hand
+     and the player must stay immediately on each hand. 
+
+REQ: The payout for a tie (push) is zero, but the player receives their wager back.
+REQ: Player is removed from table when player's balance is smaller than minimum bid.
+
+REQ: A table must shuffle its shoe after a set percentage of cards in 
+     the shoe have been dealt and the round has ended.
+REQ: Player can surrender when dealer is showing an Ace or a 10 and neither player or dealer has
+     blackjack.If player surrenders, half the wager is returned to the player.
+
+Interfaces
+REQ: There must be a command line interface for testing.
+REQ: The CLI must display the hands of each player including the dealer.
+REQ: The CLI must display a face down card for the dealer.
+
+Additions:
+DES: Make shoe support upt to 8 decks.
+DES: Add event queueing and handling for multiple interfaces.
+DES: Add graphical interface that uses events.
+DES: Add network interface for client server architecture.
+DES: Add interface for running game and storing win/loss outcomes for each hand played.
+DES: Add parameters to game for altering bet under specific conditions and saving results.

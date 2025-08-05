@@ -1,0 +1,59 @@
+****************** To CLI ******************
+Restart
+  The CLI main routine sends a restart message to the CLI system to start the CLI.
+  None of the other systems handles restart at this time.
+  The main loop of the program is currently the CLI main.
+
+Cash In Response
+
+Change Wager Response
+
+Check Balance Response
+
+Play Response
+
+
+****************** To Player ***************
+Cash in
+  CLI sends cash in message to player controller with amount encoded.
+  Player controller decodes amount and adds it to player balance.
+  Player controller sends response message to CLI confirming receipt
+    or rejecting the message if amount is invalid.
+
+Change wager
+  CLI sends change wager message to player controller.
+  Player controller decodes change wager message.
+  If wager is less than player balance then player accepts the new wager setting, 
+    and an acceptance response is sent to the CLI.
+  If the wager is too large, an Insufficient funds message is sent, followed by
+    a rejection response. CLI displays insufficient funds message.
+  If the message cannot be parsed, a rejection response is sent to the CLI.
+
+Check Balance
+  CLI sends check balance message to player. 
+  Player responds with display balance message with amount encoded.
+  CLI displays balance. 
+
+Quit
+  CLI sends quit message to player and to game simultaneously.
+  CLI transitions to quit state.
+  Player receives quit message and returns to start state.
+  Game receives quit message and returns to start state.
+  Program terminates.
+
+Play
+  CLI sends Play Hand message to the player controller and enters wait state.
+  If player balance can cover the wager, 
+    Player sends wager message to Game controller.
+    Then Player sends Play response accept message to CLI.
+
+  If player balance is too low to cover wager, 
+    Player sends insufficient funds message to the CLI 
+    Then Player sends a play response rejected message to CLI.
+     
+****************** To Game *****************
+Wager
+  Player sends wager message to game.
+  Game deals cards then sends table data message to Player.
+  
+

@@ -1,0 +1,58 @@
+Development and Design
+  Create unit tests for each module interaction.
+
+  Create config file and load game using parameters in config file.
+
+  Create shoe and multiple decks for multi deck play.
+
+  Create multihand play for player. The game should have several slots per table,
+    a player may occupy multiple slots at a table. Multiple players may play at the same table.
+  
+  Make each module run independently in separate processes.
+  Each module should be able to be shutdown and restarted as a service.
+  The game service should be able to run continuously with multiple players connecting or disconnecting.
+  A bank/ledger module should be able to id players and maintain balance for each one.
+  Each player instance should be able to be operated by a cli or a gui interface.
+
+Logger: 
+      Logger is globally instantiated in main routine fr cli. 
+      Splitting the program into multiple processes will require either a shared logger, or
+      that every process has its own logfile.
+
+Message Passing: 
+      Message passing is implemeted by a centralized "message sender" interface that registers
+      each module and allows them to pass messages to each other.
+      On each tick of the program every module processes one message from its queue.
+      
+      The program is driven by an unbroken chain of message passing.
+      The original intent of this design was to enable decoupling of each module
+      before choosing an implemention of ipc. This is an exercise in refactoring a working
+      single process program into a multi process program where each process handles
+      separate modules.
+
+      Message passing will be rewritten to use pipes, sockets, or shared memory, 
+      instead of being driven by cli/gui interface main loop.
+
+Message:
+      A message has a name, a recipient, and a body.
+
+Message Sender:
+      Has a registry of modules and their names. 
+      Messages are addressed to modules.
+
+Module:
+      A module is a message receiver. 
+      A module is composed of a state machine, dispatcher, and message sender.
+      
+State Machine: 
+      Modules can have a single state machine and each state machine points to states.
+      States have operations they execute on entry.
+      
+Dispatcher:
+      A dispatcher is composed of a map of messages types to handlers.
+
+Handlers:
+      Handlers share the message sender and the state machine.
+      Handlers run code specific to the message received.
+      
+

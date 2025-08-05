@@ -1,0 +1,69 @@
+
+Initial Wager
+  Poll each seated player for wager on each hand they wish to play. 
+  After every hand has the minimum wager.
+
+Deal
+  Dealer deals a single card to each hand face up.
+  Dealer deals a single card to self face down.
+  Dealer deals one additional card to each hand face up.
+  Dealer deals one additional card to self face up.
+  If dealer face up card is an Ace, the dealer offers insurance to all hands.  
+  After the insurance bet, if the dealer did not have
+  a natural(a hand of two cards whose value is 21), the round proceeds.
+
+Player Turn
+  Player may place a side wager at the start of each of their hands.
+  A side wager cannot be placed on a hand after the hand hits.
+  A hand may hit to receive 1 additional card to the current hand.
+  A hand busts if the value is greater than 21 and the hand ends. 
+  A hand may stand to end turn for that hand.
+  Player turn ends if all player hands have ended.
+
+Dealer Turn
+  Dealer turns over hole card revealing total value of hand.
+  Dealer hits until they have hard 17.
+  Dealer hits on soft 17.
+  Dealer stands after reaching hard 17 or greater.
+  Dealer busts if the dealer hand value is over 21 and the dealer hand ends. 
+
+Showdown
+  If dealer hand busts, all player hands that have not gone bust win the wager.
+  If player hand has busted the wager for that hand is lost.
+
+  A natural always beats a hand value of 21 that contains three or more cards.
+  If dealer hand does not have a natural, any hand with a natural wins 3 to 2.
+
+  If player hand is higher than dealer hand, player hand wins the wager.
+  If player hand ties the dealer hand, it is a push, 
+  and the player hand keeps the wager.
+  If player hand is lower than dealer hand, player hand loses the wager.
+    
+Side Wagers
+  Side wagers may be accepted at the start of a hand (after first two cards are dealt) and
+  before the first hit.
+  Side wagers include Insurance, Double Down, Surrender, and Split.
+
+Insurance
+  If the dealer face up card is an Ace, the dealer offers insurance to each player.
+  If the player accepts, the player places a side wager equal to half the player current wager.
+  If the dealer has a natural, the dealer reveals the hole card and
+  every hand that placed the insurance wager wins twice their insurance wager.
+  If the dealer does not have a natural, the hole card is not revealed and 
+  players lose their insurance wager.
+  
+Double Down
+ The player doubles the wager for the current hand.
+ A single card is dealt to the current hand and that hand stands.   
+  
+Surrender
+  The player receives half of their wager as a payout and the hand is forfeited.
+  
+Split
+  The player offers the initial wager a second time.
+  The player has their hand split into two separate hands. 
+  The new wager is applied to the new hand.
+  One additional card is dealt to each new hand.
+  Game proceeds with first hand as normal.
+  When that hand busts or stands, play continues with second hand.
+  Payout for each hand is independent of original hand.
